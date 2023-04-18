@@ -1,9 +1,3 @@
-//
-//  VIPER_QiitaAppUITestsLaunchTests.swift
-//  VIPER_QiitaAppUITests
-//
-//  Created by 日高隼人 on 2023/04/19.
-//
 
 import XCTest
 
