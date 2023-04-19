@@ -1,6 +1,6 @@
 import UIKit
 
-class QiitaListTableViewCell: UITableViewCell {
+final class QiitaListTableViewCell: UITableViewCell {
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
 

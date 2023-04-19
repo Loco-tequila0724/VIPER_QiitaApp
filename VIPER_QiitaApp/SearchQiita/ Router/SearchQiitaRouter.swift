@@ -1,8 +1,13 @@
-//
-//  SearchQiitaRouter.swift
-//  VIPER_QiitaApp
-//
-//  Created by 日高隼人 on 2023/04/19.
-//
+import UIKit
 
-import Foundation
+final class SearchQiitaRouter {
+}
+
+extension SearchQiitaRouter: SearchQiitaWireFrame {
+    static func assembleModuls() -> UIViewController {
+        return UIViewController()
+    }
+
+    func showQiitaWeb(qiitaURL: String) {
+    }
+}

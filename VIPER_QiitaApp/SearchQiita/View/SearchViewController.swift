@@ -1,10 +1,10 @@
 import UIKit
 
-class SearchQiitaViewController: UIViewController {
+final class SearchQiitaViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
-
+    var presenter: SearchQiitaPresentation?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -12,6 +12,11 @@ class SearchQiitaViewController: UIViewController {
 
 extension SearchQiitaViewController {
     @IBAction private func showQiitaList(_ sender: Any) {
+    }
+}
+
+extension SearchQiitaViewController: SearchQiitaView {
+    func tableViewReload() {
     }
 }
 

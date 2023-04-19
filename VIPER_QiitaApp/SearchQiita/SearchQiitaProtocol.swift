@@ -31,27 +31,6 @@ protocol SearchQiitaWireFrame: AnyObject {
     static func assembleModuls() -> UIViewController
     func showQiitaWeb(qiitaURL: String)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // swiftlint:disable all
 // View
 //protocol TodoListView: AnyObject {
