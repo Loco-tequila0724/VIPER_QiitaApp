@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Qiita View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchQiitaViewController" customModule="VIPER_QiitaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oqE-ZL-GDt">
+                                <rect key="frame" x="28" y="433" width="337" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wbN-Pl-d9T"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuW-Fw-Ysc">
+                                <rect key="frame" x="168.33333333333334" y="151" width="56.666666666666657" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Lk9-G5-9Dl"/>
+                                    <constraint firstAttribute="height" constant="21" id="xrb-zD-bxh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-sr-Kbi">
+                                <rect key="frame" x="168.33333333333334" y="392" width="56.666666666666657" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5Qk-bn-T2T"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Mwm-Z8-d8o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="スクリーンショット 2023-04-19 13.04.48" translatesAutoresizingMaskIntoConstraints="NO" id="MJf-w3-Bjh">
+                                <rect key="frame" x="20" y="192" width="353" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="hmz-dh-3WN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IuW-Fw-Ysc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0aE-yK-szn"/>
+                            <constraint firstItem="A3Y-sr-Kbi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5P9-MA-TT3"/>
+                            <constraint firstItem="A3Y-sr-Kbi" firstAttribute="top" secondItem="MJf-w3-Bjh" secondAttribute="bottom" constant="20" id="D8Z-Dp-6ec"/>
+                            <constraint firstItem="oqE-ZL-GDt" firstAttribute="top" secondItem="A3Y-sr-Kbi" secondAttribute="bottom" constant="20" id="HtK-g7-l5M"/>
+                            <constraint firstItem="MJf-w3-Bjh" firstAttribute="top" secondItem="IuW-Fw-Ysc" secondAttribute="bottom" constant="20" id="U45-xZ-bWB"/>
+                            <constraint firstItem="oqE-ZL-GDt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="ZNI-H7-avX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oqE-ZL-GDt" secondAttribute="trailing" constant="28" id="hun-Eb-9QN"/>
+                            <constraint firstItem="IuW-Fw-Ysc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="i69-bV-IK7"/>
+                            <constraint firstItem="oqE-ZL-GDt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jys-61-p6Z"/>
+                            <constraint firstItem="MJf-w3-Bjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nJE-3G-9fO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MJf-w3-Bjh" secondAttribute="trailing" constant="20" id="rnG-y8-oKY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="oqE-ZL-GDt" id="1cb-mx-EsB"/>
+                        <outlet property="searchInfoLabel" destination="A3Y-sr-Kbi" id="6fS-lf-k51"/>
+                        <outlet property="titleLabel" destination="IuW-Fw-Ysc" id="IqP-FT-WVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-280" y="9"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="スクリーンショット 2023-04-19 13.04.48" width="1150" height="608"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

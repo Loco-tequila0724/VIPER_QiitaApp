@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3812C09529EEFA5300639103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C09429EEFA5300639103 /* AppDelegate.swift */; };
 		3812C09729EEFA5300639103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C09629EEFA5300639103 /* SceneDelegate.swift */; };
-		3812C09929EEFA5300639103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C09829EEFA5300639103 /* ViewController.swift */; };
+		3812C09929EEFA5300639103 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C09829EEFA5300639103 /* SearchViewController.swift */; };
 		3812C09C29EEFA5300639103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3812C09A29EEFA5300639103 /* Main.storyboard */; };
 		3812C09E29EEFA5500639103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3812C09D29EEFA5500639103 /* Assets.xcassets */; };
 		3812C0A129EEFA5500639103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3812C09F29EEFA5500639103 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,11 @@
 		3812C0B629EEFA5500639103 /* VIPER_QiitaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0B529EEFA5500639103 /* VIPER_QiitaAppUITests.swift */; };
 		3812C0B829EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0B729EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift */; };
 		3812C0C829EF8F5000639103 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3812C0C729EF8F5000639103 /* .swiftlint.yml */; };
+		3812C0D129EF9ECA00639103 /* SearchQiitaInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0D029EF9ECA00639103 /* SearchQiitaInteractor.swift */; };
+		3812C0D329EF9EE600639103 /* SearchQiitaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0D229EF9EE600639103 /* SearchQiitaPresenter.swift */; };
+		3812C0D529EF9F0500639103 /* SearchQiitaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0D429EF9F0500639103 /* SearchQiitaEntity.swift */; };
+		3812C0D729EF9F2600639103 /* SearchQiitaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0D629EF9F2600639103 /* SearchQiitaRouter.swift */; };
+		3812C0D929EF9F6700639103 /* SearchQiitaProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0D829EF9F6700639103 /* SearchQiitaProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,7 @@
 		3812C09129EEFA5300639103 /* VIPER_QiitaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_QiitaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3812C09429EEFA5300639103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3812C09629EEFA5300639103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3812C09829EEFA5300639103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3812C09829EEFA5300639103 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3812C09B29EEFA5300639103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3812C09D29EEFA5500639103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3812C0A029EEFA5500639103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		3812C0B529EEFA5500639103 /* VIPER_QiitaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_QiitaAppUITests.swift; sourceTree = "<group>"; };
 		3812C0B729EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_QiitaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3812C0C729EF8F5000639103 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		3812C0D029EF9ECA00639103 /* SearchQiitaInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQiitaInteractor.swift; sourceTree = "<group>"; };
+		3812C0D229EF9EE600639103 /* SearchQiitaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQiitaPresenter.swift; sourceTree = "<group>"; };
+		3812C0D429EF9F0500639103 /* SearchQiitaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQiitaEntity.swift; sourceTree = "<group>"; };
+		3812C0D629EF9F2600639103 /* SearchQiitaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQiitaRouter.swift; sourceTree = "<group>"; };
+		3812C0D829EF9F6700639103 /* SearchQiitaProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQiitaProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +114,7 @@
 			children = (
 				3812C09429EEFA5300639103 /* AppDelegate.swift */,
 				3812C09629EEFA5300639103 /* SceneDelegate.swift */,
-				3812C09829EEFA5300639103 /* ViewController.swift */,
-				3812C09A29EEFA5300639103 /* Main.storyboard */,
+				3812C0CF29EF987800639103 /* SearchQiita */,
 				3812C09D29EEFA5500639103 /* Assets.xcassets */,
 				3812C09F29EEFA5500639103 /* LaunchScreen.storyboard */,
 				3812C0A229EEFA5500639103 /* Info.plist */,
@@ -128,6 +137,60 @@
 				3812C0B729EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift */,
 			);
 			path = VIPER_QiitaAppUITests;
+			sourceTree = "<group>";
+		};
+		3812C0CA29EF97E200639103 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3812C09A29EEFA5300639103 /* Main.storyboard */,
+				3812C09829EEFA5300639103 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3812C0CB29EF980400639103 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3812C0D029EF9ECA00639103 /* SearchQiitaInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3812C0CC29EF981800639103 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3812C0D229EF9EE600639103 /* SearchQiitaPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3812C0CD29EF984400639103 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3812C0D429EF9F0500639103 /* SearchQiitaEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3812C0CE29EF986300639103 /*  Router */ = {
+			isa = PBXGroup;
+			children = (
+				3812C0D629EF9F2600639103 /* SearchQiitaRouter.swift */,
+			);
+			path = " Router";
+			sourceTree = "<group>";
+		};
+		3812C0CF29EF987800639103 /* SearchQiita */ = {
+			isa = PBXGroup;
+			children = (
+				3812C0D829EF9F6700639103 /* SearchQiitaProtocol.swift */,
+				3812C0CA29EF97E200639103 /* View */,
+				3812C0CB29EF980400639103 /* Interactor */,
+				3812C0CC29EF981800639103 /* Presenter */,
+				3812C0CD29EF984400639103 /* Entity */,
+				3812C0CE29EF986300639103 /*  Router */,
+			);
+			path = SearchQiita;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +346,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3812C09929EEFA5300639103 /* ViewController.swift in Sources */,
+				3812C09929EEFA5300639103 /* SearchViewController.swift in Sources */,
 				3812C09529EEFA5300639103 /* AppDelegate.swift in Sources */,
+				3812C0D729EF9F2600639103 /* SearchQiitaRouter.swift in Sources */,
 				3812C09729EEFA5300639103 /* SceneDelegate.swift in Sources */,
+				3812C0D929EF9F6700639103 /* SearchQiitaProtocol.swift in Sources */,
+				3812C0D329EF9EE600639103 /* SearchQiitaPresenter.swift in Sources */,
+				3812C0D129EF9ECA00639103 /* SearchQiitaInteractor.swift in Sources */,
+				3812C0D529EF9F0500639103 /* SearchQiitaEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
