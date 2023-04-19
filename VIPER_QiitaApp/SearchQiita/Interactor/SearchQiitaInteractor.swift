@@ -5,6 +5,7 @@ final class SearchQiitaInteractor {
 }
 
 extension SearchQiitaInteractor: SearchQiitaInputUsecase {
-    func fetchQiitaArticle() {
+    func fetchQiitaArticle(searchText: String) async -> [QiitaEntity?] {
+        return []
     }
 }

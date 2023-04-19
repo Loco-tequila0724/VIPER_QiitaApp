@@ -2,7 +2,7 @@ import UIKit
 // View
 protocol SearchQiitaView: AnyObject {
     var presenter: SearchQiitaPresentation? { get set }
-    func tableViewReload()
+    func tableViewReload(qiitaList: [QiitaEntity?])
 }
 // Pesenter
 protocol SearchQiitaPresentation: AnyObject {
@@ -19,7 +19,7 @@ protocol SearchQiitaPresentation: AnyObject {
 protocol SearchQiitaInputUsecase: AnyObject {
     var output: SearchQiitaOutputUsecase? { get set }
     /// データベースからQiita記事(JSON)を取得
-    func fetchQiitaArticle()
+    func fetchQiitaArticle(searchText: String) async -> [QiitaEntity?]
 }
 // Interactor アウトプット
 protocol SearchQiitaOutputUsecase: AnyObject {
