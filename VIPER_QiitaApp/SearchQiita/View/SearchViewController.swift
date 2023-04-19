@@ -5,18 +5,22 @@ final class SearchQiitaViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
     var presenter: SearchQiitaPresentation?
+    private var qiitaList: [QiitaEntity?] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-extension SearchQiitaViewController {
-    @IBAction private func showQiitaList(_ sender: Any) {
+private extension SearchQiitaViewController {
+    @IBAction func showQiitaList(_ sender: Any) {
     }
 }
 
 extension SearchQiitaViewController: SearchQiitaView {
-    func tableViewReload() {
+    func tableViewReload(qiitaList: [QiitaEntity?]) {
+        self.qiitaList = qiitaList
+        tableView.reloadData()
     }
 }
 
