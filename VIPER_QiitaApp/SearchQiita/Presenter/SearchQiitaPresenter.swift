@@ -9,20 +9,19 @@ final class SearchQiitaPresenter {
 extension SearchQiitaPresenter: SearchQiitaPresentation {
     func viewDidLoad() {
     }
-
+    /// 検索ボタン押されたら通知。 View → Interactor
     func searchButtonDidTapped(text: String) {
-        let searchText = text
-        Task {
-            guard let qiitaArray = await interactor?.fetchQiitaArticle(searchText: searchText) else { return }
-            view?.tableViewReload(qiitaList: qiitaArray)
-        }
+        interactor?.fetchQiitaArticle(searchText: text)
     }
-
+    /// セルボタンを押したら通知  View → Router
     func didSelectRow(qiitaArticle: QiitaEntity) {
     }
 }
 
 extension SearchQiitaPresenter: SearchQiitaOutputUsecase {
-    func convertQiitaArticleList(qiitaList: [QiitaEntity]) {
+    /// Qiita記事を取得したら通知。 Interactor → View
+    func didFetchQiitaArticle(qiitaList: [QiitaEntity]) {
+        let qiitList = qiitaList
+        view?.tableViewReload(qiitaList: qiitaList)
     }
 }

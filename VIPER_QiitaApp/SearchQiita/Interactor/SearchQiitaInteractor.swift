@@ -1,11 +1,10 @@
 import Foundation
 
 final class SearchQiitaInteractor {
-    weak var output: SearchQiitaOutputUsecase?
+    weak var presenter: SearchQiitaOutputUsecase?
 }
 
 extension SearchQiitaInteractor: SearchQiitaInputUsecase {
-    func fetchQiitaArticle(searchText: String) async -> [QiitaEntity?] {
-        return []
+    func fetchQiitaArticle(searchText: String) {
     }
 }

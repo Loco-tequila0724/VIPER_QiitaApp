@@ -17,14 +17,13 @@ protocol SearchQiitaPresentation: AnyObject {
 }
 // Interactor インプット
 protocol SearchQiitaInputUsecase: AnyObject {
-    var output: SearchQiitaOutputUsecase? { get set }
+    var presenter: SearchQiitaOutputUsecase? { get set }
     /// データベースからQiita記事(JSON)を取得
-    func fetchQiitaArticle(searchText: String) async -> [QiitaEntity?]
+    func fetchQiitaArticle(searchText: String)
 }
 // Interactor アウトプット
 protocol SearchQiitaOutputUsecase: AnyObject {
-    /// JSONデータをQiita記事に変換しリスト化
-    func convertQiitaArticleList(qiitaList: [QiitaEntity])
+    func didFetchQiitaArticle(qiitaList: [QiitaEntity])
 }
 // Router
 protocol SearchQiitaWireFrame: AnyObject {
