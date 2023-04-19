@@ -1,7 +1,6 @@
-
 import XCTest
 @testable import VIPER_QiitaApp
-
+    // swiftlint:disable all
 final class VIPER_QiitaAppTests: XCTestCase {
 
     override func setUpWithError() throws {

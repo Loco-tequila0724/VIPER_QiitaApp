@@ -1,6 +1,5 @@
-
 import XCTest
-
+// swiftlint:disable all
 final class VIPER_QiitaAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {

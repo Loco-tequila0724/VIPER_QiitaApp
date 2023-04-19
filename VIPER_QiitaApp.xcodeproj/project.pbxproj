@@ -16,6 +16,7 @@
 		3812C0AC29EEFA5500639103 /* VIPER_QiitaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0AB29EEFA5500639103 /* VIPER_QiitaAppTests.swift */; };
 		3812C0B629EEFA5500639103 /* VIPER_QiitaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0B529EEFA5500639103 /* VIPER_QiitaAppUITests.swift */; };
 		3812C0B829EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0B729EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift */; };
+		3812C0C829EF8F5000639103 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3812C0C729EF8F5000639103 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3812C0B129EEFA5500639103 /* VIPER_QiitaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPER_QiitaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3812C0B529EEFA5500639103 /* VIPER_QiitaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_QiitaAppUITests.swift; sourceTree = "<group>"; };
 		3812C0B729EEFA5500639103 /* VIPER_QiitaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER_QiitaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3812C0C729EF8F5000639103 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		3812C08829EEFA5300639103 = {
 			isa = PBXGroup;
 			children = (
+				3812C0C729EF8F5000639103 /* .swiftlint.yml */,
 				3812C09329EEFA5300639103 /* VIPER_QiitaApp */,
 				3812C0AA29EEFA5500639103 /* VIPER_QiitaAppTests */,
 				3812C0B429EEFA5500639103 /* VIPER_QiitaAppUITests */,
@@ -137,6 +140,7 @@
 				3812C08D29EEFA5300639103 /* Sources */,
 				3812C08E29EEFA5300639103 /* Frameworks */,
 				3812C08F29EEFA5300639103 /* Resources */,
+				3812C0C929EF8F7300639103 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3812C0C829EF8F5000639103 /* .swiftlint.yml in Resources */,
 				3812C0A129EEFA5500639103 /* LaunchScreen.storyboard in Resources */,
 				3812C09E29EEFA5500639103 /* Assets.xcassets in Resources */,
 				3812C09C29EEFA5300639103 /* Main.storyboard in Resources */,
@@ -252,6 +257,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3812C0C929EF8F7300639103 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3812C08D29EEFA5300639103 /* Sources */ = {
