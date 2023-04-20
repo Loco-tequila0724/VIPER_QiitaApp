@@ -75,6 +75,8 @@ extension SearchQiitaViewController: UITableViewDataSource {
         let iamgeURL: URL = URL(string: qiitaArticle?.user.profileImageURL ?? "")!
         cell.userImage().loadImageAsynchronous(url: iamgeURL)
 
+        cell.selectionStyle = .none
+
         return cell
     }
 }
@@ -82,5 +84,10 @@ extension SearchQiitaViewController: UITableViewDataSource {
 extension SearchQiitaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let qiita = qiitaList[indexPath.row] else { return }
+        presenter?.didSelectRow(qiita: qiita)
     }
 }
