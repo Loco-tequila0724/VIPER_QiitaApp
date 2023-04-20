@@ -36,3 +36,4 @@ protocol SearchQiitaWireFrame: AnyObject {
     static func assembleModules() -> UIViewController
     func showQiitaWeb(qiitaURL: String)
 }
+
