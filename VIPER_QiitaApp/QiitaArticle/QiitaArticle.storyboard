@@ -15,9 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OC4-GD-8CC">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OC4-GD-8CC" secondAttribute="bottom" id="3wV-MP-tAt"/>
+                            <constraint firstItem="OC4-GD-8CC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ws3-hs-PlA"/>
+                            <constraint firstItem="OC4-GD-8CC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fxp-BD-9as"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OC4-GD-8CC" secondAttribute="trailing" id="oQY-Hi-aTx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webkit" destination="OC4-GD-8CC" id="YaN-3j-Nvd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
