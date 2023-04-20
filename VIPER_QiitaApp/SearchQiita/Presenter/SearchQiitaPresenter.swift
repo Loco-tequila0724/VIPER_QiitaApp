@@ -4,6 +4,14 @@ final class SearchQiitaPresenter {
     weak var view: SearchQiitaView?
     var interactor: SearchQiitaInputUsecase?
     var router: SearchQiitaWireFrame?
+
+    init(view: SearchQiitaView? = nil,
+        interactor: SearchQiitaInputUsecase? = nil,
+        router: SearchQiitaWireFrame? = nil) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
 }
 
 extension SearchQiitaPresenter: SearchQiitaPresentation {
