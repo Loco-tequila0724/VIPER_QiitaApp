@@ -1,7 +1,7 @@
 import Foundation
 
 class QiitaArticlePresenter {
-    var view: QiitaArticleView?
+    weak var view: QiitaArticleView?
     var router: QiitaArticleWireFrame?
     var qiitaArticle: QiitaEntity?
 
@@ -17,9 +17,8 @@ class QiitaArticlePresenter {
 
 extension QiitaArticlePresenter: QiitaArticlePresentation {
     func viewDidLoad() {
-        view?.configure()
-    }
-
-    func backButtonDidTapped() {
+        guard let url = URL(string: qiitaArticle?.url ?? "") else { return }
+        let urlRequest = URLRequest(url: url)
+        view?.configure(urlRequest: urlRequest)
     }
 }
