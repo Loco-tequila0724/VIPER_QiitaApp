@@ -29,6 +29,7 @@
 		3812C0EA29F1802400639103 /* QiitaArticleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0E929F1802400639103 /* QiitaArticleRouter.swift */; };
 		3812C0EC29F180D400639103 /* QiitaArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0EB29F180D400639103 /* QiitaArticleViewController.swift */; };
 		3812C0EE29F187E000639103 /* QiitaArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812C0ED29F187E000639103 /* QiitaArticlePresenter.swift */; };
+		3812C0F029F18D9500639103 /* QiitaArticle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3812C0EF29F18D9500639103 /* QiitaArticle.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3812C0E929F1802400639103 /* QiitaArticleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleRouter.swift; sourceTree = "<group>"; };
 		3812C0EB29F180D400639103 /* QiitaArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleViewController.swift; sourceTree = "<group>"; };
 		3812C0ED29F187E000639103 /* QiitaArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticlePresenter.swift; sourceTree = "<group>"; };
+		3812C0EF29F18D9500639103 /* QiitaArticle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QiitaArticle.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		3812C0E229F17EF600639103 /* QiitaArticle */ = {
 			isa = PBXGroup;
 			children = (
+				3812C0EF29F18D9500639103 /* QiitaArticle.storyboard */,
 				3812C0E329F17F6F00639103 /* QiitaArticleProtocol.swift */,
 				3812C0EB29F180D400639103 /* QiitaArticleViewController.swift */,
 				3812C0ED29F187E000639103 /* QiitaArticlePresenter.swift */,
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3812C0C829EF8F5000639103 /* .swiftlint.yml in Resources */,
+				3812C0F029F18D9500639103 /* QiitaArticle.storyboard in Resources */,
 				3812C0A129EEFA5500639103 /* LaunchScreen.storyboard in Resources */,
 				3812C09E29EEFA5500639103 /* Assets.xcassets in Resources */,
 				3812C09C29EEFA5300639103 /* Main.storyboard in Resources */,

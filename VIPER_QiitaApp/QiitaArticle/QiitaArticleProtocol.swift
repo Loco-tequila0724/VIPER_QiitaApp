@@ -7,7 +7,6 @@ protocol QiitaArticleView {
 
 protocol QiitaArticlePresentation {
     var view: QiitaArticleView? { get set }
-    var presenter: QiitaArticlePresentation? { get set }
     var router: QiitaArticleWireFrame? { get set }
     func viewDidLoad()
     func backButtonDidTapped()
