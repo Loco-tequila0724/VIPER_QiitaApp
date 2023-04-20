@@ -16,7 +16,7 @@ protocol SearchQiitaPresentation: AnyObject {
     ///  検索ボタンタップ通知 。
     func searchButtonDidTapped(text: String)
     ///  セルタップ通知。
-    func didSelectRow(qiitaArticle: QiitaEntity)
+    func didSelectRow(qiita: QiitaEntity)
 }
 // Interactor インプット
 protocol SearchQiitaInputUsecase: AnyObject {
@@ -34,6 +34,5 @@ protocol SearchQiitaOutputUsecase: AnyObject {
 // Router
 protocol SearchQiitaWireFrame: AnyObject {
     static func assembleModules() -> UIViewController
-    func showQiitaWeb(qiitaURL: String)
+    func showQiitaWeb(qiita: QiitaEntity)
 }
-

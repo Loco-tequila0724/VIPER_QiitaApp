@@ -1,7 +1,7 @@
 import UIKit
 
 final class SearchQiitaRouter {
-    var viewController: UIViewController
+    private let viewController: UIViewController
 
     private init(viewController: UIViewController) {
         self.viewController = viewController
@@ -24,6 +24,8 @@ extension SearchQiitaRouter: SearchQiitaWireFrame {
         return view
     }
 
-    func showQiitaWeb(qiitaURL: String) {
+    func showQiitaWeb(qiita: QiitaEntity) {
+        let qiitaArticleVC = QiitaArticleRouter.assembleModules(qiita: qiita)
+        viewController.navigationController?.pushViewController(qiitaArticleVC, animated: true)
     }
 }
