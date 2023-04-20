@@ -19,7 +19,7 @@ protocol SearchQiitaPresentation: AnyObject {
 protocol SearchQiitaInputUsecase: AnyObject {
     var presenter: SearchQiitaOutputUsecase? { get set }
     /// データベースからQiita記事(JSON)を取得
-    func fetchQiitaArticle(searchText: String)
+    func fetchQiitaArticle(searchText: String) async -> (Result<[QiitaEntity?], ApiError>)
 }
 // Interactor アウトプット
 protocol SearchQiitaOutputUsecase: AnyObject {

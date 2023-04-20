@@ -9,7 +9,7 @@ final class SearchQiitaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+    } 
 }
 
 private extension SearchQiitaViewController {

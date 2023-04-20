@@ -11,7 +11,16 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
     }
     /// 検索ボタン押されたら通知。 View → Interactor
     func searchButtonDidTapped(text: String) {
-        interactor?.fetchQiitaArticle(searchText: text)
+        Task {
+            guard let qiitaList = await interactor?.fetchQiitaArticle(searchText: text) else { return }
+
+            switch qiitaList {
+            case .success(let qiitaList):
+                view?.tableViewReload(qiitaList: qiitaList)
+            case .failure(let apiError):
+                print(apiError.localizedDescription)
+            }
+        }
     }
     /// セルボタンを押したら通知  View → Router
     func didSelectRow(qiitaArticle: QiitaEntity) {
@@ -21,7 +30,6 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
 extension SearchQiitaPresenter: SearchQiitaOutputUsecase {
     /// Qiita記事を取得したら通知。 Interactor → View
     func didFetchQiitaArticle(qiitaList: [QiitaEntity]) {
-        let qiitList = qiitaList
         view?.tableViewReload(qiitaList: qiitaList)
     }
 }
