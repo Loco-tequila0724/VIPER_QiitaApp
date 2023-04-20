@@ -5,7 +5,8 @@ final class SearchQiitaPresenter {
     var interactor: SearchQiitaInputUsecase?
     var router: SearchQiitaWireFrame?
 
-    init(view: SearchQiitaView? = nil,
+    init(
+        view: SearchQiitaView? = nil,
         interactor: SearchQiitaInputUsecase? = nil,
         router: SearchQiitaWireFrame? = nil) {
         self.view = view
@@ -16,18 +17,14 @@ final class SearchQiitaPresenter {
 
 extension SearchQiitaPresenter: SearchQiitaPresentation {
     func viewDidLoad() {
+        view?.configure()
     }
     /// 検索ボタン押されたら通知。 View → Interactor
     func searchButtonDidTapped(text: String) {
+        view?.startLoading()
         Task {
-            guard let qiitaList = await interactor?.fetchQiitaArticle(searchText: text) else { return }
-
-            switch qiitaList {
-            case .success(let qiitaList):
-                view?.tableViewReload(qiitaList: qiitaList)
-            case .failure(let apiError):
-                print(apiError.localizedDescription)
-            }
+            await interactor?.fetchQiitaArticle(searchText: text)
+            interactor?.convertQiitaList()
         }
     }
     /// セルボタンを押したら通知  View → Router
@@ -37,7 +34,8 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
 
 extension SearchQiitaPresenter: SearchQiitaOutputUsecase {
     /// Qiita記事を取得したら通知。 Interactor → View
-    func didFetchQiitaArticle(qiitaList: [QiitaEntity]) {
+    func didFetchQiitaResult(qiitaList: [QiitaEntity]) {
+        view?.stopLoading()
         view?.tableViewReload(qiitaList: qiitaList)
     }
 }
