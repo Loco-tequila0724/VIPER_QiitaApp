@@ -13,7 +13,6 @@ extension SearchQiitaInteractor: SearchQiitaInputUsecase {
         switch qiitaRepository {
         case .success(let qiitaList):
             let qiitaList = qiitaList.compactMap { $0 }
-            print("🙆‍♂️",qiitaList.count)
             print(qiitaList.map { $0.user.profileImageURL })
             presenter?.didFetchQiitaResult(qiitaList: qiitaList)
         case .failure(let apiError):

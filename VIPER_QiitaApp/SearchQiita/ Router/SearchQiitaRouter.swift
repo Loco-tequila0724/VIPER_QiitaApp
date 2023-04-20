@@ -9,7 +9,7 @@ final class SearchQiitaRouter {
 }
 
 extension SearchQiitaRouter: SearchQiitaWireFrame {
-    static func assembleModuls() -> UIViewController {
+    static func assembleModules() -> UIViewController {
         let view = SearchQiitaViewController.instantiate()
         let interactor = SearchQiitaInteractor()
         let router = SearchQiitaRouter(viewController: view)

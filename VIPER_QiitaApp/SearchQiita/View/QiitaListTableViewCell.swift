@@ -13,4 +13,3 @@ final class QiitaListTableViewCell: UITableViewCell {
         return userImageView
     }
 }
-    
