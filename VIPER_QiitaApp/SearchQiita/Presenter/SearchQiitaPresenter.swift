@@ -28,7 +28,8 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
         }
     }
     /// セルボタンを押したら通知  View → Router
-    func didSelectRow(qiitaArticle: QiitaEntity) {
+    func didSelectRow(qiita: QiitaEntity) {
+        router?.showQiitaWeb(qiita: qiita)
     }
 }
 
