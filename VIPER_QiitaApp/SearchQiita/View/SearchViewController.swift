@@ -4,12 +4,15 @@ final class SearchQiitaViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var indicateBackGroundView: UIView!
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+
     var presenter: SearchQiitaPresentation?
     static let storyboardID = "SearchQiitaID"
     private var qiitaList: [QiitaEntity?] = []
 
     static func instantiate() -> SearchQiitaViewController {
-        let storyboard = UIStoryboard(name: storyboardID, bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let view = storyboard.instantiateViewController(withIdentifier: storyboardID) as? SearchQiitaViewController else {
             return SearchQiitaViewController()
         }
@@ -18,8 +21,7 @@ final class SearchQiitaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        presenter?.viewDidLoad()
     }
 }
 
@@ -32,9 +34,31 @@ private extension SearchQiitaViewController {
 }
 
 extension SearchQiitaViewController: SearchQiitaView {
+    func configure() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        indicateBackGroundView.isHidden = true
+    }
+
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.indicatorView.startAnimating()
+            self.indicateBackGroundView.isHidden = false
+        }
+    }
+
+    func stopLoading() {
+        DispatchQueue.main.async {
+            self.indicatorView.stopAnimating()
+            self.indicateBackGroundView.isHidden = true
+        }
+    }
+
     func tableViewReload(qiitaList: [QiitaEntity?]) {
         self.qiitaList = qiitaList
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -57,6 +81,6 @@ extension SearchQiitaViewController: UITableViewDataSource {
 
 extension SearchQiitaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
     }
 }
