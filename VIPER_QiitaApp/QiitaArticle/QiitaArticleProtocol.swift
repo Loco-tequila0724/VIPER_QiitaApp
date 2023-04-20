@@ -1,17 +1,16 @@
 import UIKit
 
-protocol QiitaArticleView {
+protocol QiitaArticleView: AnyObject {
     var presenter: QiitaArticlePresentation? { get set }
-    func configure()
+    func configure(urlRequest: URLRequest)
 }
 
-protocol QiitaArticlePresentation {
+protocol QiitaArticlePresentation: AnyObject {
     var view: QiitaArticleView? { get set }
     var router: QiitaArticleWireFrame? { get set }
     func viewDidLoad()
-    func backButtonDidTapped()
 }
 
-protocol QiitaArticleWireFrame {
-    static func assembleModules() -> UIViewController
+protocol QiitaArticleWireFrame: AnyObject {
+    static func assembleModules(qiita: QiitaEntity) -> UIViewController
 }
