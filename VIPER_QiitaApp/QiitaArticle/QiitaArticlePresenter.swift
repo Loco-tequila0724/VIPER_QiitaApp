@@ -1,6 +1,6 @@
 import Foundation
 
-class QiitaArticlePresenter {
+final class QiitaArticlePresenter {
     weak var view: QiitaArticleView?
     var router: QiitaArticleWireFrame?
     var qiitaArticle: QiitaEntity?

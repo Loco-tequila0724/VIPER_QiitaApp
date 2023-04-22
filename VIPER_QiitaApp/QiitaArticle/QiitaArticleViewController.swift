@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-class QiitaArticleViewController: UIViewController {
+final class QiitaArticleViewController: UIViewController {
     var presenter: QiitaArticlePresentation?
     static let storyboardID = "QiitaArticleID"
     private var request: URLRequest?

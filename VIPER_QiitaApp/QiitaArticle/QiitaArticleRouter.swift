@@ -1,7 +1,7 @@
 import UIKit
 
-class QiitaArticleRouter {
-    private let viewController: UIViewController
+final class QiitaArticleRouter {
+    private weak var viewController: UIViewController?
     private init(viewController: UIViewController) {
         self.viewController = viewController
     }
