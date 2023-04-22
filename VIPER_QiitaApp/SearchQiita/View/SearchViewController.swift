@@ -9,7 +9,6 @@ final class SearchQiitaViewController: UIViewController {
 
     var presenter: SearchQiitaPresentation?
     static let storyboardID = "SearchQiitaID"
-    private var qiitaList: [QiitaEntity?] = []
 
     static func instantiate() -> SearchQiitaViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -53,9 +52,7 @@ extension SearchQiitaViewController: SearchQiitaView {
             self.indicateBackGroundView.isHidden = true
         }
     }
-
-    func tableViewReload(qiitaList: [QiitaEntity?]) {
-        self.qiitaList = qiitaList
+    func tableViewReload() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -64,12 +61,12 @@ extension SearchQiitaViewController: SearchQiitaView {
 
 extension SearchQiitaViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return qiitaList.count
+        return presenter?.qiitaList.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: QiitaListTableViewCell.identifier) as? QiitaListTableViewCell else { return UITableViewCell() }
-        let qiitaArticle = qiitaList[indexPath.row]
+        let qiitaArticle = presenter?.qiitaList[indexPath.row]
         cell.configure(title: qiitaArticle?.title ?? "")
 
         let iamgeURL: URL = URL(string: qiitaArticle?.user.profileImageURL ?? "")!
@@ -87,7 +84,7 @@ extension SearchQiitaViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let qiita = qiitaList[indexPath.row] else { return }
+        guard let qiita = presenter?.qiitaList[indexPath.row] else { return }
         presenter?.didSelectRow(qiita: qiita)
     }
 }

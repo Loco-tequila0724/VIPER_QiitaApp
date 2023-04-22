@@ -4,6 +4,7 @@ final class SearchQiitaPresenter {
     weak var view: SearchQiitaView?
     var interactor: SearchQiitaInputUsecase?
     var router: SearchQiitaWireFrame?
+    var qiitaList: [QiitaEntity] = []
 
     init(
         view: SearchQiitaView? = nil,
@@ -24,7 +25,6 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
         view?.startLoading()
         Task {
             await interactor?.fetchQiitaArticle(searchText: text)
-            interactor?.convertQiitaList()
         }
     }
     /// セルボタンを押したら通知  View → Router
@@ -34,9 +34,16 @@ extension SearchQiitaPresenter: SearchQiitaPresentation {
 }
 
 extension SearchQiitaPresenter: SearchQiitaOutputUsecase {
-    /// Qiita記事を取得したら通知。 Interactor → View
-    func didFetchQiitaResult(qiitaList: [QiitaEntity]) {
+    // Qiita記事を取得したら通知。 Interactor → View
+    func didFetchQiitaResult(result: Result<[QiitaEntity?], ApiError>) {
         view?.stopLoading()
-        view?.tableViewReload(qiitaList: qiitaList)
+        switch result {
+        case .success(let qiitaList):
+            self.qiitaList = qiitaList.compactMap { $0 }
+            view?.tableViewReload()
+        case .failure(let error):
+            // 本来ならエラー表示のアラートを発動 
+            print(error.localizedDescription)
+        }
     }
 }
